@@ -11,23 +11,19 @@ public class secondmain {
             Human human=new Human();
             Random random = new Random();
             human.setAge(1+random.nextInt(100));
-            human.setFirstName(scanner.nextLine());
+            human.setFirstName(/*scanner.nextLine()*/ "a");
             people.add(human);
         }
 
         Stream <Human> stream = people.stream();
         stream.filter(human -> human.getAge() > 20)
-                .forEach(human -> System.out.println(human.getAge()+"  "+human.getFirstName()));
-        System.out.println();
-        stream = people.stream();
-                stream.sorted(Comparator.comparing(human -> (int)(human.getFirstName().charAt(human.getFirstName().length()-1))))
-                .forEach(human -> System.out.println(human.getAge()+"  "+human.getFirstName()));
-        System.out.println();
-        stream = people.stream();
-        stream.forEach(human ->{
-            human.setAge(human.getAge()+3);
-            System.out.println(human.getAge()+"  "+human.getFirstName());
-        });
+                .peek(human -> System.out.println(human.getAge()+"  "+human.getFirstName()))
+                .sorted(Comparator.comparing(human -> (int)(human.getFirstName().charAt(human.getFirstName().length()-1))))
+                .peek(human -> System.out.println(human.getAge()+"  "+human.getFirstName()))
+                .forEach(human ->{
+                    human.setAge(human.getAge()+3);
+                    System.out.println(human.getAge()+"  "+human.getFirstName());
+                });
         System.out.println();
         stream = people.stream();
         long sum = stream.count();
