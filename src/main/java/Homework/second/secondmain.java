@@ -28,7 +28,7 @@ public class secondmain {
         stream = people.stream();
         ArrayList age = new ArrayList<Integer>();
         stream.forEach(human -> age.add(human.getAge()));
-        int k= 0;
+       int k = 0;
         for (int i=0 ;i< age.size();i++){
             int k1= (int) age.get(i);
             k=k+k1;

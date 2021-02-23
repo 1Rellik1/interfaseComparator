@@ -1,19 +1,23 @@
 package Homework.third;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 import java.util.concurrent.Semaphore;
 
 public class Thirdmain {
+    public static void  main(String[] args) {
+//        Thread thread1 =  new MyThread("first");
+//        Thread thread2 =  new MyThread("second");
+//        Thread thread3 =  new MyThread("third");
+//        thread1.start();
+//        thread2.start();
+//        thread3.start();
 
-    public static void main(String[] args) {
-        Thread thread1 =  new MyThread("first");
-        Thread thread2 =  new MyThread("second");
-        Thread thread3 =  new MyThread("third");
+        Thread thread1 =  new Mapsyncronized("first");
+        Thread thread2 =  new Mapsyncronized("second");
         thread1.start();
         thread2.start();
-        thread3.start();
     }
+
     public static class MyThread extends Thread {
         MyThread(String name){ this.setName(name);}
         ArrayList list = new ArrayList<Integer>(1);
@@ -35,5 +39,7 @@ public class Thirdmain {
             sem.release();
         }
     }
+
+
 }
 
