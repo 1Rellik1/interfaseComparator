@@ -26,8 +26,6 @@ public class secondmain {
                 });
         System.out.println();
         stream = people.stream();
-        long sum = stream.count();
-        stream = people.stream();
         ArrayList age = new ArrayList<Integer>();
         stream.forEach(human -> age.add(human.getAge()));
         int k= 0;
