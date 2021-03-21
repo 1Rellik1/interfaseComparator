@@ -1,13 +1,17 @@
-package Homework.sixteenth;
+package Homework.seventeenth;
 
 import org.hibernate.annotations.GenericGenerator;
 import org.jetbrains.annotations.NotNull;
 
 import javax.persistence.*;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.UUID;
 
-@Entity
+
 @Table(name = "Game")
+@Entity
+
 public class Game {
     @Id
     @GeneratedValue(generator = "UUID")
@@ -33,4 +37,11 @@ public class Game {
     @OneToMany(mappedBy = "game")
     private List<Level> levels = new ArrayList<>();
 
+    public String getName() {
+        return name;
+    }
+
+    public int getCreationYear() {
+        return creationYear;
+    }
 }

@@ -1,8 +1,9 @@
-package Homework.sixteenth.controller;
+package Homework.seventeenth.controller;
 
-import Homework.sixteenth.Game;
-import Homework.sixteenth.Level;
-import Homework.sixteenth.LevelTest;
+
+import Homework.seventeenth.Game;
+import Homework.seventeenth.Level;
+import Homework.seventeenth.LevelTest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -29,8 +30,24 @@ public class LevelController {
         test.deleteLevel(id);
     }
 
+    @DeleteMapping("/deletelevel")
+    public void delete(@PathVariable Level level) {
+        test.delete(level);
+    }
+
+    @GetMapping("/getFilteredBytName")
+    public List<Level> getFilteredBytName(){
+        return test.getByName();
+    }
+
+    @GetMapping("/getFilteredByComplexity")
+    public List<Level> getFilteredByComplexity(){
+        return test.getByCmp();
+    }
+
     @GetMapping(value = "/level/{Id}/game")
-    public @ResponseBody Game getGame(@PathVariable("Id") UUID id){
+    public @ResponseBody
+    Game getGame(@PathVariable("Id") UUID id){
         return test.getGame(id);
     }
 

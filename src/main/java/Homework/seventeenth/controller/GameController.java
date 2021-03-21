@@ -1,7 +1,8 @@
-package Homework.sixteenth.controller;
+package Homework.seventeenth.controller;
 
-import Homework.sixteenth.Game;
-import Homework.sixteenth.GameTest;
+import Homework.seventeenth.Game;
+import Homework.seventeenth.GameTest;
+import Homework.seventeenth.Level;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -22,6 +23,22 @@ public class GameController {
     public List<Game> getAll() {
         return test.getGames();
     }
+
+    @DeleteMapping("/deletegame")
+    public void delete(@PathVariable Game game) {
+        test.delete(game);
+    }
+
+    @GetMapping("/getFilteredByName")
+    public List<Game> getFilteredByName(){
+        return test.getByName();
+    }
+
+    @GetMapping("/getFilteredByYear")
+    public List<Game> getFilteredByLastName(){
+        return test.getByYear();
+    }
+
 
     @DeleteMapping("/game/{id}")
     public void delete(@PathVariable UUID id) {

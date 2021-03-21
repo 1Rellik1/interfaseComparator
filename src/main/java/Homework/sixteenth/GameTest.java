@@ -50,9 +50,6 @@ public class GameTest {
 
         session.getTransaction().commit();
     }
-    public Developer getUserByGame(Long Id) {
-        return session.createQuery("from Game where id = :id", Game.class).
-                setParameter("id",Id).getSingleResult().getDeveloper();
-    }
+
 
 }

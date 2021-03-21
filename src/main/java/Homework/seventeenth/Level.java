@@ -1,4 +1,5 @@
-package Homework.sixteenth;
+package Homework.seventeenth;
+
 
 import org.hibernate.annotations.GenericGenerator;
 
@@ -31,4 +32,12 @@ public class Level {
     public Game game;
 
     public Game getGame(){return game;}
+
+    public String getName() {
+        return name;
+    }
+
+    public String getComplexity() {
+        return complexity;
+    }
 }
