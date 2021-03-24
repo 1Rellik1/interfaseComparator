@@ -25,14 +25,14 @@ public class GameTest {
 
     private Session session;
     private CriteriaBuilder builder;
-    private CriteriaQuery<Game> CriteriaQuery;
+    private CriteriaQuery<Game> gameCriteriaQuery;
     private Root<Game> root;
     @PostConstruct
     public void init() {
         session = sessionFactory.openSession();
         builder = session.getCriteriaBuilder();
-        CriteriaQuery = builder.createQuery(Game.class);
-        root = CriteriaQuery.from(Game.class);
+        gameCriteriaQuery = builder.createQuery(Game.class);
+        root = gameCriteriaQuery.from(Game.class);
     }
 
     @PreDestroy
@@ -72,14 +72,14 @@ public class GameTest {
         session.getTransaction().commit();
     }
     public List<Game> getByName() {
-        CriteriaQuery.select(root).orderBy(builder.asc(root.get("name")));
-        Query<Game> query = session.createQuery(CriteriaQuery);
+        gameCriteriaQuery.select(root).orderBy(builder.asc(root.get("name")));
+        Query<Game> query = session.createQuery(gameCriteriaQuery);
         return query.getResultList();
     }
 
     public List<Game> getByYear() {
-        CriteriaQuery.select(root).orderBy(builder.asc(root.get("creationYear")));
-        Query<Game> query = session.createQuery(CriteriaQuery);
+        gameCriteriaQuery.select(root).orderBy(builder.asc(root.get("creationYear")));
+        Query<Game> query = session.createQuery(gameCriteriaQuery);
         return query.getResultList();
     }
 }

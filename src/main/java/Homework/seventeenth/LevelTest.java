@@ -34,7 +34,7 @@ public class LevelTest {
         session = sessionFactory.openSession();
         builder = session.getCriteriaBuilder();
         CriteriaQuery = builder.createQuery(Level.class);
-        //root = CriteriaQuery.from(Level.class);
+        root = CriteriaQuery.from(Level.class);
 
     }
 
