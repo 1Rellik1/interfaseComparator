@@ -117,7 +117,11 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-mail</artifactId>
         </dependency>
-
+        <dependency>
+            <groupId>com.betfair.net.java.opendmk</groupId>
+            <artifactId>core</artifactId>
+            <version>1.0-b02</version>
+        </dependency>
     </dependencies>>
     <build>
         <plugins>
