@@ -1,4 +1,4 @@
-package Homework.seventeenth;
+package Homework.twentieth.Classes;
 
 import org.hibernate.annotations.GenericGenerator;
 import org.jetbrains.annotations.NotNull;
@@ -7,7 +7,6 @@ import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
-
 
 @Table(name = "Game")
 @Entity

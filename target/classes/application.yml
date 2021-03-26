@@ -1,3 +1,17 @@
 student.name: "Alexey"
 student.last_name: Gayntsev
 student.group: ikbo-16-19
+spring:
+  jpa:
+    database: POSTGRESQL
+    show-sql: true
+    hibernate:
+      ddl-auto: create-drop
+  datasource:
+    platform: postgres
+    url: jdbc:postgresql://localhost:8082/postgres
+    username: postgres
+    password: admin
+    driverClassName: org.postgresql.Driver
+
+
