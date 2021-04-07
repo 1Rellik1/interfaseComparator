@@ -1,8 +1,7 @@
 package Homework.seventeenth.controller;
 
-import Homework.seventeenth.Game;
+import Homework.seventeenth.Entities.Game;
 import Homework.seventeenth.GameTest;
-import Homework.seventeenth.Level;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

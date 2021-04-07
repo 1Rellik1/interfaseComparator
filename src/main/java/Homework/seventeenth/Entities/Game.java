@@ -1,17 +1,15 @@
-package Homework.seventeenth;
+package Homework.seventeenth.Entities;
 
-import Homework.seventeenth.Entities.Level;
 import org.hibernate.annotations.GenericGenerator;
 import org.jetbrains.annotations.NotNull;
-
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.UUID;
 
-
-@Table(name = "Game")
 @Entity
+@Table(name = "Game")
 public class Game {
     @Id
     @GeneratedValue(generator = "UUID")
@@ -43,5 +41,18 @@ public class Game {
 
     public int getCreationYear() {
         return creationYear;
+    }
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Game game = (Game) o;
+        return Objects.equals(name, game.name) &&
+                Objects.equals(creationYear, game.creationYear);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, creationYear);
     }
 }

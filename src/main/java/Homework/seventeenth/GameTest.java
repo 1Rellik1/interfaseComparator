@@ -1,9 +1,13 @@
 package Homework.seventeenth;
 
+import Homework.seventeenth.Entities.Game;
+import Homework.seventeenth.Entities.Level;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
@@ -15,6 +19,7 @@ import java.util.List;
 import java.util.UUID;
 
 @Service
+
 public class GameTest {
     @Autowired
     private final SessionFactory sessionFactory;

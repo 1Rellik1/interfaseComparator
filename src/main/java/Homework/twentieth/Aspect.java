@@ -20,7 +20,7 @@ public class Aspect {
         long start = System.currentTimeMillis();
         Object proceed = joinPoint.proceed();
         long executionTime = System.currentTimeMillis() - start;
-        //log.log(Level.INFO, joinPoint.getSignature() + " выполнен за " + executionTime + "мс");
+
         log.info(joinPoint.getSignature() + " выполнен за " + executionTime + "мс");
         return proceed;
     }

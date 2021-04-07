@@ -1,8 +1,7 @@
-package Homework.seventeenth;
+package Homework.seventeenth.Entities;
 
 
 import org.hibernate.annotations.GenericGenerator;
-
 import javax.persistence.*;
 import java.util.UUID;
 

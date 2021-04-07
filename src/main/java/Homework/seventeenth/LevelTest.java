@@ -1,6 +1,8 @@
 package Homework.seventeenth;
 
 
+import Homework.seventeenth.Entities.Game;
+import Homework.seventeenth.Entities.Level;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.query.Query;
